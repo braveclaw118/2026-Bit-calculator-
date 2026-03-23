@@ -9,8 +9,7 @@ def instructions():
 instructions here
 -Instruction 1
 -Instruction 2
--
-you get it right?
+-you get it right?
     ''')
 
 # main routine here
