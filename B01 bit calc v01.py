@@ -13,7 +13,7 @@ Image calculation:
 \nInteger (positive full number) calculation:
  -type in int or integer and then the number.
 \nText calculation:
-- Type in text that wouldn't be interpreted as the others, and then give the text you want to calculate bits of.
+- Type in txt, and then give the text you want to calculate bits of.
 \n Closing program:
 type "xxx"
     ''')
@@ -35,7 +35,7 @@ def get_filetype():
 
         # check for image
         elif response in ['image','img','picture','p']:
-            return "Image"
+            return "image"
 
         #check for text
         elif response in ['text','txt','t']:
@@ -46,7 +46,7 @@ def get_filetype():
 
 def int_check(question, low):
 
-    error = "Please enter an integer that is more than 0\n"
+    error = "Please enter an integer that is equal to or more than 0\n"
     while True:
         try:
             response= int(input(question))
@@ -62,8 +62,8 @@ def int_check(question, low):
 # calculate how many bits are needed to represent an integer
 def image_calc():
     # get img dimensions
-    width = int_check ( "Image width:",1 )
-    height = int_check ("Image height: ",1)
+    width = int_check ( "image width:",1 )
+    height = int_check ("image height: ",1)
 
     # calculate number of pixels and multiply them to get number of bits
     num_pixels = width * height
@@ -130,7 +130,7 @@ while True:
         else:
             file_type= "image"
 
-    if file_type == "Image":
+    if file_type == "image":
         image_ans = image_calc()
         print(image_ans)
     elif file_type == 'integer':
